@@ -1,0 +1,187 @@
+$gray: #333435;
+$primary: #fd6433;
+$green: #34c365;
+
+:root {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    background-color: $gray;
+}
+
+body {
+    margin: 0;
+}
+
+.navbar {
+    background-color: $gray;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 13px 15%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 110%;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+
+    .site {
+        margin: 0 auto 0 0;
+        font-size: 140%;
+    }
+
+    .green {
+        color: $green;
+        border-bottom: 2px solid $green;
+        transition: border-bottom-color 0.085s ease-in-out, transform 0.1s ease-out;
+        display: inline-block;
+
+        @keyframes pop {
+            0% {
+                transform: scale(0.9);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        &:hover, &:focus {
+            animation: pop 0.15s ease-out forwards;
+            border-bottom-color: transparent;
+        }
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        padding: 0 1px;
+        margin: 0 4px;
+        transition: color 0.085s ease-in-out;
+
+        &:hover, &:focus {
+            color: $primary;
+        }
+    }
+}
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+main {
+    .hero {
+        font-size: 120%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 150px;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            background-color: $gray;
+        }
+
+        &::after {
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            background-color: white;
+            display: block;
+            content: '';
+            z-index: -1;
+            border-radius: 10000000px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8) inset;
+        }
+
+        .hero-button {
+            background-color: $primary;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+            padding: 20px 40px;
+            text-decoration: none;
+            color: white;
+            margin-top: 50px;
+            transition: background-color 0.1s linear, transform 0.085s ease-out;
+
+            &:hover, &:focus {
+                transform: scale(1.1);
+                background-color: $green;
+                box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+
+    .form {
+        background-color: $primary;
+        color: white;
+        padding: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.3);
+
+        table {
+            font-size: 140%;
+            border-spacing: 10px;
+        }
+
+        input {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+            font-size: inherit;
+            color: $gray;
+            padding: 4px;
+            border: 0;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .submit-row td {
+            text-align: center;
+
+            input {
+                background-color: white;
+                color: $primary;
+                padding: 10px 50px;
+                border: 0;
+                transition: all 0.1s ease-out;
+                cursor: pointer;
+                box-shadow: 0;
+
+                &:hover, &:focus {
+                    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+                    transform: translateY(-4px);
+                    color: $gray;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    color: white;
+    padding: 40px;
+    box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.3);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    
+    a {
+        text-decoration: none;
+        color: $primary;
+        margin: 0 8px;
+        border-bottom: 2px solid $primary;
+    }
+}
